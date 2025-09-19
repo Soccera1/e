@@ -19,13 +19,12 @@ jobs:
       run: bmake
 
   build-windows:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - name: Install dependencies
-      run: |
-        choco install tinycc make
-    - name: Create cc symlink
-      run: New-Item -ItemType SymbolicLink -Name cc.exe -Value (Get-Command tcc).Source
+    run: |
+        sudo apt-get update
+        sudo apt-get install -y x86_64-w64-mingw32 bmake libc6-dev
     - name: Build
-      run: make
+      run: bmake CC=x86_64-w64-mingw32
