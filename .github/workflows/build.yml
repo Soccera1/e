@@ -26,4 +26,4 @@ jobs:
       run: |
         choco install tinycc make
     - name: Build
-      run: bmake
+      run: make
