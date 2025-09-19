@@ -25,6 +25,6 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y x86_64-w64-mingw32 bmake libc6-dev
+        sudo apt-get install -y gcc-mingw-w64 bmake libc6-dev
     - name: Build
-      run: bmake CC=x86_64-w64-mingw32
+      run: bmake CC=gcc-mingw-w64
