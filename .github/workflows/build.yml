@@ -25,7 +25,7 @@ jobs:
     - name: Install dependencies
       run: |
         choco install tinycc make
-    - name: Alias cc to tcc
-      run: New-Alias -Name cc -Value tcc
+    - name: Create cc symlink
+      run: New-Item -ItemType SymbolicLink -Name cc.exe -Value (Get-Command tcc).Source
     - name: Build
       run: make
