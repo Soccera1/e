@@ -23,7 +23,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install dependencies
-    run: |
+      run: |
         sudo apt-get update
         sudo apt-get install -y x86_64-w64-mingw32 bmake libc6-dev
     - name: Build
