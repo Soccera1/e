@@ -25,5 +25,7 @@ jobs:
     - name: Install dependencies
       run: |
         choco install tinycc make
+    - name: Alias cc to tcc
+      run: New-Alias -Name cc -Value tcc
     - name: Build
       run: make
